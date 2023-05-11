@@ -1,0 +1,38 @@
+input.viewsin {
+    border-radius: 17px;
+    text-align: center;
+    min-width: 100px;
+    font-size: larger;
+}
+.subviews {
+    border-radius: 15px;
+    min-width: 47px;
+    background-color: mediumslateblue;
+    font-weight: bold;
+    color: floralwhite;
+}
+select#menuinstanceid {
+    max-width: 90%;
+}
+select#menuuser {
+    max-width: 90%;
+}
+.form-inline label {
+    justify-content: flex-start;
+}
+.block_resetviews_views {
+    margin-right: 10px;
+    margin-top: -17px;
+    margin-bottom: -3px;
+    padding: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+span.view-count {
+    background-color: #cd00003b;
+    max-width: fit-content;
+    border-radius: 7px;
+    padding: 7px;
+    font-size: small;
+    font-weight: 500;
+}
