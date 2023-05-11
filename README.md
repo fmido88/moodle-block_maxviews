@@ -1,4 +1,4 @@
-# Display modules views #
+# reset module views #
 
 This plugin works along with avaliability_maxviews (release 7).
 It display a notice to users about the limitation of the module and the remaining available views.

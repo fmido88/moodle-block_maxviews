@@ -17,7 +17,7 @@
 /**
  * Plugin capabilities are defined here.
  *
- * @package     block_resetviews
+ * @package     block_maxviews
  * @category    access
  * @copyright   2023 Mohammad Farouk <phun.for.physics@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array (
-    'block/resetviews:addinstance' => array(
+    'block/maxviews:addinstance' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
@@ -36,7 +36,7 @@ $capabilities = array (
         ),
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
         ),
-    'block/resetviews:view' => [
+    'block/maxviews:view' => [
         'captype' => 'read',
         'contextlevel' => CONTEXT_COURSE,
         'archetypes' => [

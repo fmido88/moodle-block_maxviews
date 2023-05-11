@@ -17,7 +17,7 @@
 /**
  * Code that is executed before the tables and data are dropped during the plugin uninstallation.
  *
- * @package     block_resetviews
+ * @package     block_maxviews
  * @category    upgrade
  * @copyright   2023 Mohammad Farouk <phun.for.physics@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,6 +26,6 @@
 /**
  * Custom uninstallation procedure.
  */
-function xmldb_block_resetviews_uninstall() {
+function xmldb_block_maxviews_uninstall() {
     return true;
 }

@@ -17,7 +17,7 @@
 /**
  * Code to be executed after the plugin's database scheme has been installed is defined here.
  *
- * @package     block_resetviews
+ * @package     block_maxviews
  * @category    upgrade
  * @copyright   2023 Mohammad Farouk <phun.for.physics@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -26,7 +26,7 @@
 /**
  * Custom code to be run on installing the plugin.
  */
-function xmldb_block_resetviews_install() {
+function xmldb_block_maxviews_install() {
 
     return true;
 }
