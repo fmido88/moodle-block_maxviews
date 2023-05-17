@@ -170,8 +170,22 @@ class block_maxviews extends block_base {
                     $where .= ' AND timecreated >= :lastreset';
                     $params['lastreset'] = $override->lastreset;
                 }
+
+                // To make sure that it is numeric integer value.
+                $lastreset = intval($override->lastreset);
+                if (!empty($lastreset)) {
+                    $where .= ' AND timecreated >= :lastreset';
+                    $params['lastreset'] = $override->lastreset;
+                }
+                // Check the type of overriding.
+                $type = get_config('availability_maxviews', 'overridetype');
+                // If there is override, set the new value according to the type of override.
                 if (!empty($override->maxviews)) {
-                    $viewslimit += $override->maxviews;
+                    if ($type == 'normal') {
+                        $viewslimit = $override->maxviews;
+                    } else if ($type == 'add') {
+                        $viewslimit += $override->maxviews;
+                    }
                 }
             }
             $viewscount = $reader->get_events_select_count($where, $params);
