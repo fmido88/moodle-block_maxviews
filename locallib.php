@@ -29,11 +29,11 @@
  *
  * @return array return the array with course modules with availability maxviews enabled.
  */
-function get_modules_with_maxviews($userid, $courseid) {
+function block_maxviews_get_modules_with_maxviews($userid, $courseid) {
     global $DB;
 
     $cms = get_fast_modinfo($courseid)->cms;
-    $moduleswithmaxviews = array();
+    $moduleswithmaxviews = [];
     foreach ($cms as $cm) {
         $getviewslimit = $DB->get_field_select('course_modules', 'availability' ,
         "`availability` LIKE '%maxviews%' AND `id` = '$cm->id'", ['id' => $cm->id], IGNORE_MISSING);
@@ -54,7 +54,7 @@ function get_modules_with_maxviews($userid, $courseid) {
  * @param int $courseid
  * @return string
  */
-function get_index($courseid) {
+function block_maxviews_get_index($courseid) {
     global $OUTPUT, $PAGE;
 
     $output = $PAGE->get_renderer('availability_maxviews');

@@ -56,16 +56,16 @@ class block_maxviews extends block_base {
             !has_capability('moodle/course:manageactivities', $ctx)) {
             return $this->content;
         }
-        $this->content->icons = array();
+        $this->content->icons = [];
         $this->content->footer = '';
-        $this->content->items = array();
+        $this->content->items = [];
 
         $id = optional_param('id', 0, PARAM_INT); // Course id.
-        $course = $DB->record_exists('course', array('id' => $id));
+        $course = $DB->record_exists('course', ['id' => $id]);
         if ($course == false) {
             return $this->content;
         } else {
-            $this->content->text = get_index($id);
+            $this->content->text = block_maxviews_get_index($id);
             return $this->content;
         }
     }
@@ -100,13 +100,13 @@ class block_maxviews extends block_base {
      * @return string[] Array of pages and permissions.
      */
     public function applicable_formats() {
-        return array(
+        return [
             'course-view' => true,
-        );
+        ];
     }
 
     /**
-     * We use this function here to display a discription for
+     * We use this function here to display a description for
      * the student showing the limits of views even if he isn't
      * restricted.
      *
@@ -118,7 +118,7 @@ class block_maxviews extends block_base {
         global $USER, $COURSE, $DB;
         require_once(__DIR__ . '/locallib.php');
 
-        $cms = get_modules_with_maxviews($USER->id, $COURSE->id);
+        $cms = block_maxviews_get_modules_with_maxviews($USER->id, $COURSE->id);
         // Get the views of current user and get string from availability max-views.
         $logmanager = get_log_manager();
         if (!$readers = $logmanager->get_readers('core\log\sql_reader')) {
@@ -237,7 +237,6 @@ class block_maxviews extends block_base {
                 });';
             $this->page->requires->js_init_code($code);
         }
-
     }
 }
 

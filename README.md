@@ -1,6 +1,6 @@
 # Display modules views #
 
-This plugin works along with avaliability_maxviews (release 7).
+This plugin works along with avaliability_maxviews (release 7 or more).
 It display a notice to users about the limitation of the module and the remaining available views.
 
 ## Installing via uploaded ZIP file ##
